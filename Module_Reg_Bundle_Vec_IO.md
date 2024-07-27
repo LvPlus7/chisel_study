@@ -77,7 +77,7 @@ class MyShiftRegister(val init: Int = 1) extends Module {
 
 ```
 
-## Bundle
+## Bundle 捆
 Bundle用来将一堆信号形成一个捆绑包
 ```scala
 class Channel() extends Bundle {
@@ -140,7 +140,8 @@ assignWord := split.asUInt
 //使用bundle进行部分赋值
 ```
 ## Wire
-UInt、SInt和Bits都是Chisel类型，它们本身是不直接表示硬件的，只有把它们封装成为Wire、Reg或IO才会生成电路  
+UInt、SInt和Bits都是Chisel类型，它们本身是不直接表示硬件的，只有把它们封装成为Wire、Reg或IO才会生成电路     
+  
 在chisel中只使用val来描述电路
 ```scala
 val number = Wire(UInt())
