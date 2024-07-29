@@ -1,28 +1,3 @@
-# Chisel Test
-
-## Format：
-
-```scala
-c.io.in.poke(  )
-c.io.out.expect(  )
-c.io.out.peek()
-c.io.clock.step(n) //用于在测试模块中控制时钟
-```
-
-## EnqueNow and ExpectDequeNow
-
-
-| method           |                            description                             |
-| ---------------- | :----------------------------------------------------------------: |
-| enqueueNow       |     Add (enqueue) one element to a `Decoupled` input interface     |
-| expectDequeueNow | Removes (dequeues) one element from a `Decoupled` output interface |
-
-## EnqueueSeq and DequeueSeq
-
-| method           | description                                                                                                                            |
-| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
-| enqueueSeq       | Continues to add (enqueue) elements from the `Seq` to a `Decoupled` input interface, one at a time, until the sequence is exhausted    |
-| expectDequeueSeq | Removes (dequeues) elements from a `Decoupled` output interface, one at a time, and compares each one to the next element of the `Seq` |
 
 ## Fork and Join
 
