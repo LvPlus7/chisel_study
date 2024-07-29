@@ -8,9 +8,13 @@ class QueueModule[T <: Data](ioType: T, entries: Int) extends MultiIOModule {
 }
 ```
 
+
 1. Decoupled：给bit数据包裹上一层握手协议，decoupled 默认方向为输出，如果需要输入，可以加Flipped.  
 2. Decoupled 可以直接调用Bundle或者Bits，Bundle 内的端口也应该用bits定义。  
 3. Ready应该只取决于接收器是否能够接收数据，valid应该只取决于源是否有数据。只有在事务完成之后(在下一个时钟周期中)，这些值才应该更新。
+
+
+
 ```scala
 val myChiselData = UInt(8.W)
 val myDecoupled = Decoupled(myChiselData) //在这里包上了一层协议
@@ -97,9 +101,7 @@ class DecoupledExample extends Module {
   producer.io.out <> io.out
   consumer.io.in <> io.in
 }
-//????????????????????????????????????????
-//bits的连接????
-
 ```
+
 > [!NOTE]
-> ??????
+> 
